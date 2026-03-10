@@ -11,9 +11,9 @@
 </p>
 
 
-| Latest Stable Release | Upstream URL |
-| :---: | :---: |
-| [Click here](https://github.com/pkgforge-dev/mGBA-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/mgba-emu/mgba) |
+| Latest Stable Release | Latest Nightly Relase | Upstream URL |
+| :---: | :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/mGBA-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/pkgforge-dev/mGBA-AppImage-Enhanced/releases/tag/nightly) | [Click here](https://github.com/mgba-emu/mgba) |
 
 </div>
 
