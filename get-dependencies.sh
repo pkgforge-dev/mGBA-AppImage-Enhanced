@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm mgba-qt
+# pacman -Syu --noconfirm
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -19,8 +19,11 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
 #
-# if [ "${DEVEL_RELEASE-}" = 1 ]; then
-# 	nightly build steps
-# else
-# 	regular build steps
-# fi
+if [ "${DEVEL_RELEASE-}" = 1 ]; then
+ 	package=mgba-qt-git
+  make-aur-package $package
+else
+  package=mgba-qt
+  pacman -Syu --noconfirm $package
+fi
+pacman -Q "$package" | awk '{print $2; exit}' > ~/version
