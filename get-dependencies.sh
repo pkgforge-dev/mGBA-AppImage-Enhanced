@@ -24,6 +24,6 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
   make-aur-package $package
 else
   package=mgba-qt
-  pacman -Syu --noconfirm $package
+  pacman -S --noconfirm $package
 fi
 pacman -Q "$package" | awk '{print $2; exit}' > ~/version
