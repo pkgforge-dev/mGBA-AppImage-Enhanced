@@ -24,10 +24,10 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
 #
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
-  PRE_BUILD_CMDS='sed -i "\|io.mgba.mGBA.desktop|d" ./PKGBUILD' make-aur-package mgba-git
-  pacman -Q mgba-qt-git | awk '{print $2; exit}' > ~/version
+  package=mgba-git
+  PRE_BUILD_CMDS='sed -i "\|io.mgba.mGBA.desktop|d" ./PKGBUILD' make-aur-package "$package"
 else
   package=mgba-qt
   pacman -S --noconfirm "$package"
-  pacman -Q "$package" | awk '{print $2; exit}' > ~/version
 fi
+pacman -Q "$package" | awk '{print $2; exit}' > ~/version
