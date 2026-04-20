@@ -29,5 +29,5 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
 else
   package=mgba-qt
   pacman -S --noconfirm $package
-  pacman -Q mgba-qt | awk '{print $2; exit}' > ~/version
+  pacman -Q $package | awk '{print $2; exit}' > ~/version
 fi
