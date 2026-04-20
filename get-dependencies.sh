@@ -28,6 +28,6 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
   pacman -Q mgba-qt-git | awk '{print $2; exit}' > ~/version
 else
   package=mgba-qt
-  pacman -S --noconfirm $package
+  pacman -S --noconfirm "$package"
   pacman -Q "$package" | awk '{print $2; exit}' > ~/version
 fi
