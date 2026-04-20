@@ -21,7 +21,7 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 #
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
  	package=mgba-git
-  make-aur-package $package
+  PRE_BUILD_CMDS='sed -i "\|io.mgba.mGBA.desktop|d" ./PKGBUILD' make-aur-package $package
 else
   package=mgba-qt
   pacman -S --noconfirm $package
